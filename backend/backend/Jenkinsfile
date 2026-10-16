@@ -11,7 +11,7 @@ pipeline {
 
         stage('Compile') {
             steps {
-                dir('backend') {
+                dir('backend/backend') {
                     sh 'mvn clean compile'
                 }
             }
@@ -19,7 +19,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                dir('backend') {
+                dir('backend/backend') {
                     sh 'docker build -t backend-app:latest .'
                 }
             }
